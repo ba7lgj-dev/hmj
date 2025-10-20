@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>黄明俊 · 全栈开发工程师</title>
+    <meta name="description" content="黄明俊的个人作品集，展示全栈开发项目、技能与联系方式。" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="scripts/i18n.js"></script>
+    <script defer src="scripts/theme.js"></script>
+    <script defer src="scripts/timeline.js"></script>
+    <script defer src="scripts/contact.js"></script>
+  </head>
+  <body>
+    <header class="site-header" data-aos="fade-down">
+      <div class="container site-header__inner">
+        <a class="logo" href="#hero" data-i18n="nav.brand">黄明俊</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav id="primary-navigation" class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#about" data-i18n="nav.about">关于</a></li>
+            <li><a href="#timeline" data-i18n="nav.timeline">经历</a></li>
+            <li><a href="#achievements" data-i18n="nav.achievements">成果</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="button button--ghost" id="language-toggle" aria-label="Toggle language">中 / EN</button>
+          <button class="button button--icon" id="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero" data-aos="fade-up">
+        <div class="container hero__content">
+          <div>
+            <p class="hero__eyebrow" data-i18n="hero.eyebrow">全栈开发工程师</p>
+            <h1 data-i18n="hero.title">你好，我是黄明俊</h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">
+              专注构建稳定、可维护的 web 应用，拥有原生 Java Web 框架自研与在线考试系统实践经验。
+            </p>
+            <div class="hero__cta">
+              <a class="button" href="#contact" data-i18n="hero.ctaPrimary">立即联系</a>
+              <a class="button button--ghost" href="#achievements" data-i18n="hero.ctaSecondary">查看项目</a>
+            </div>
+          </div>
+          <div class="hero__badge" data-aos="zoom-in">
+            <span class="hero__badge-label" data-i18n="hero.badgeLabel">技术关键词</span>
+            <ul>
+              <li>Java</li>
+              <li>Servlet</li>
+              <li>JavaScript</li>
+              <li>DI / AOP</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section section--about" data-aos="fade-up">
+        <div class="container">
+          <div class="section__header">
+            <h2 data-i18n="about.title">关于黄明俊</h2>
+            <p class="section__subtitle" data-i18n="about.subtitle">全栈开发工程师</p>
+          </div>
+          <article class="about__intro" data-i18n="about.summary">
+            <!-- 文案由 i18n.js 注入 -->
+          </article>
+          <div class="skills-grid">
+            <article class="skill-card" data-category="backend" data-aos="fade-up">
+              <div class="skill-card__icon" aria-hidden="true">💻</div>
+              <h3>Java &amp; Servlet</h3>
+              <p data-i18n="about.skills.backend"></p>
+            </article>
+            <article class="skill-card" data-category="frontend" data-aos="fade-up" data-aos-delay="150">
+              <div class="skill-card__icon" aria-hidden="true">🧩</div>
+              <h3>现代前端</h3>
+              <p data-i18n="about.skills.frontend"></p>
+            </article>
+            <article class="skill-card" data-category="architecture" data-aos="fade-up" data-aos-delay="250">
+              <div class="skill-card__icon" aria-hidden="true">🛠</div>
+              <h3>工程实践</h3>
+              <p data-i18n="about.skills.engineering"></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section section--timeline" aria-labelledby="timeline-title" data-aos="fade-up">
+        <div class="container">
+          <div class="section__header">
+            <h2 id="timeline-title" data-i18n="timeline.title">专业经历</h2>
+            <p class="section__subtitle" data-i18n="timeline.subtitle">持续探索全栈解决方案</p>
+          </div>
+          <ol class="timeline" data-observe>
+            <li class="timeline__item" data-observe-item>
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <h3>ForWhat 问答论坛</h3>
+                <span class="timeline__time" data-i18n="timeline.forwhat.time">2024 年</span>
+                <p data-i18n="timeline.forwhat.desc"></p>
+                <a class="link" href="https://github.com/example/forwhat" target="_blank" rel="noopener" data-i18n="timeline.forwhat.link">查看代码</a>
+              </div>
+            </li>
+            <li class="timeline__item" data-observe-item>
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__content">
+                <h3>Examination System</h3>
+                <span class="timeline__time" data-i18n="timeline.exam.time">2023 年</span>
+                <p data-i18n="timeline.exam.desc"></p>
+                <a class="link" href="https://github.com/example/examination-system" target="_blank" rel="noopener" data-i18n="timeline.exam.link">了解更多</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="achievements" class="section section--achievements" data-aos="fade-up">
+        <div class="container">
+          <div class="section__header">
+            <h2 data-i18n="achievements.title">项目成果与证书</h2>
+            <p class="section__subtitle" data-i18n="achievements.subtitle">项目沉淀与专业认证</p>
+          </div>
+          <div class="card-grid">
+            <article class="card" data-aos="zoom-in">
+              <img src="assets/images/forwhat-thumb.svg" alt="ForWhat 问答论坛缩略图" loading="lazy" />
+              <div class="card__body">
+                <h3>ForWhat 问答论坛</h3>
+                <p data-i18n="achievements.forwhat.desc"></p>
+                <div class="card__actions">
+                  <a class="button" href="https://github.com/example/forwhat" target="_blank" rel="noopener" data-i18n="achievements.forwhat.cta">查看 GitHub</a>
+                  <a class="button button--ghost" href="#contact" data-i18n="achievements.contact">预约演示</a>
+                </div>
+              </div>
+            </article>
+            <article class="card" data-aos="zoom-in" data-aos-delay="120">
+              <img src="assets/images/exam-thumb.svg" alt="在线考试系统缩略图" loading="lazy" />
+              <div class="card__body">
+                <h3>Examination System</h3>
+                <p data-i18n="achievements.exam.desc"></p>
+                <div class="card__actions">
+                  <a class="button" href="https://github.com/example/examination-system" target="_blank" rel="noopener" data-i18n="achievements.exam.cta">项目仓库</a>
+                </div>
+              </div>
+            </article>
+            <article class="card" data-aos="zoom-in" data-aos-delay="240">
+              <img src="assets/images/certificate.svg" alt="专业证书图标" loading="lazy" />
+              <div class="card__body">
+                <h3 data-i18n="achievements.cert.title">专业认证</h3>
+                <p data-i18n="achievements.cert.desc"></p>
+                <button class="button" data-modal-target="#certificate-modal" data-i18n="achievements.cert.cta">查看证书</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--contact" data-aos="fade-up">
+        <div class="container contact__layout">
+          <div class="contact__info">
+            <h2 data-i18n="contact.title">联系我</h2>
+            <p data-i18n="contact.subtitle">欢迎通过以下方式与我沟通合作机会。</p>
+            <ul class="contact__socials">
+              <li>
+                <a href="mailto:huang.mingjun@example.com" class="contact__social-link" aria-label="Email">
+                  <span aria-hidden="true">✉️</span>
+                  <span>huang.mingjun@example.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/example" target="_blank" rel="noopener" class="contact__social-link" aria-label="GitHub">
+                  <span aria-hidden="true">🐙</span>
+                  <span>GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/example" target="_blank" rel="noopener" class="contact__social-link" aria-label="LinkedIn">
+                  <span aria-hidden="true">🔗</span>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+            </ul>
+            <figure class="contact__map">
+              <img src="assets/images/map-placeholder.svg" alt="中国广州位置地图示意" loading="lazy" />
+              <figcaption data-i18n="contact.location">中国 · 广州</figcaption>
+            </figure>
+          </div>
+          <div class="contact__form-wrapper">
+            <form class="contact-form" novalidate>
+              <div class="form-field">
+                <label for="name" data-i18n="contact.form.name">姓名</label>
+                <input id="name" type="text" name="name" required placeholder="张三" />
+                <span class="input-error" data-i18n="contact.form.nameError">请填写姓名。</span>
+              </div>
+              <div class="form-field">
+                <label for="email" data-i18n="contact.form.email">邮箱</label>
+                <input id="email" type="email" name="email" required placeholder="you@example.com" />
+                <span class="input-error" data-i18n="contact.form.emailError">请输入有效邮箱。</span>
+              </div>
+              <div class="form-field form-field--full">
+                <label for="message" data-i18n="contact.form.message">留言</label>
+                <textarea id="message" name="message" rows="5" required placeholder="想聊聊新的合作机会吗？"></textarea>
+                <span class="input-error" data-i18n="contact.form.messageError">请填写留言内容。</span>
+              </div>
+              <button type="submit" class="button" data-i18n="contact.form.submit">发送</button>
+              <p class="form-feedback" hidden data-i18n="contact.form.success">感谢留言！我会尽快回复。</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>&copy; <span id="year"></span> <span data-i18n="footer.owner">黄明俊</span>. <span data-i18n="footer.rights">保留所有权利。</span></p>
+        <a class="link" href="#hero" data-i18n="footer.backToTop">返回顶部</a>
+      </div>
+    </footer>
+
+    <div class="modal" id="certificate-modal" role="dialog" aria-modal="true" aria-labelledby="certificate-title" hidden>
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__content">
+        <button class="modal__close" type="button" data-modal-close aria-label="Close">×</button>
+        <h3 id="certificate-title" data-i18n="modal.certificate.title">专业证书</h3>
+        <p data-i18n="modal.certificate.body">
+          完成多项在线课程与企业级培训，涵盖高并发 Java Web 开发、数据库调优与前端工程化实践。
+        </p>
+        <a class="button" href="https://example.com/certificate" target="_blank" rel="noopener" data-i18n="modal.certificate.link">查看认证详情</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('primary-navigation');
+
+        navToggle.addEventListener('click', () => {
+          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('is-open');
+        });
+
+        document.querySelectorAll('[data-modal-target]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const target = document.querySelector(btn.dataset.modalTarget);
+            if (target) {
+              target.hidden = false;
+              document.body.classList.add('modal-open');
+            }
+          });
+        });
+
+        document.querySelectorAll('[data-modal-close]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const modal = btn.closest('.modal');
+            if (modal) {
+              modal.hidden = true;
+              document.body.classList.remove('modal-open');
+            }
+          });
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            document.querySelectorAll('.modal').forEach((modal) => {
+              if (!modal.hidden) {
+                modal.hidden = true;
+                document.body.classList.remove('modal-open');
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
