@@ -1,0 +1,10 @@
+<svg width="360" height="240" viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="certTitle certDesc">
+  <title id="certTitle">Certificate badge</title>
+  <desc id="certDesc">Badge style illustration for certificates.</desc>
+  <rect width="360" height="240" rx="28" fill="#f8fafc" stroke="#94a3b8" stroke-width="4" />
+  <circle cx="180" cy="120" r="72" fill="#6366f1" opacity="0.15" />
+  <circle cx="180" cy="120" r="56" fill="#6366f1" opacity="0.3" />
+  <circle cx="180" cy="120" r="40" fill="#6366f1" />
+  <text x="180" y="128" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="26" fill="#f8fafc">认证</text>
+  <path d="M180 162 L204 210 L180 196 L156 210 Z" fill="#f59e0b" />
+</svg>
