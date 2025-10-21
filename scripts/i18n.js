@@ -1,6 +1,7 @@
 (function () {
   const translations = {
     zh: {
+      'global.skip': '跳到主要内容',
       'nav.brand': '黄明俊',
       'nav.about': '关于',
       'nav.timeline': '经历',
@@ -55,6 +56,7 @@
       'modal.certificate.link': '查看认证详情',
     },
     en: {
+      'global.skip': 'Skip to main content',
       'nav.brand': 'Mingjun Huang',
       'nav.about': 'About',
       'nav.timeline': 'Timeline',

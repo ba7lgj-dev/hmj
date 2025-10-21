@@ -14,6 +14,7 @@
     <script defer src="scripts/contact.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#main" data-i18n="global.skip">跳到主要内容</a>
     <header class="site-header" data-aos="fade-down">
       <div class="container site-header__inner">
         <a class="logo" href="#hero" data-i18n="nav.brand">黄明俊</a>
@@ -37,8 +38,9 @@
         </div>
       </div>
     </header>
+    <div class="site-nav__overlay" hidden></div>
 
-    <main>
+    <main id="main">
       <section id="hero" class="hero" data-aos="fade-up">
         <div class="container hero__content">
           <div>
@@ -241,12 +243,69 @@
         document.getElementById('year').textContent = new Date().getFullYear();
         const navToggle = document.querySelector('.nav-toggle');
         const nav = document.getElementById('primary-navigation');
+        const navOverlay = document.querySelector('.site-nav__overlay');
+        const navLinks = nav ? nav.querySelectorAll('a[href^="#"]') : [];
+        const mobileQuery = window.matchMedia('(max-width: 960px)');
 
-        navToggle.addEventListener('click', () => {
-          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-          navToggle.setAttribute('aria-expanded', String(!expanded));
-          nav.classList.toggle('is-open');
+        const setNavState = (open) => {
+          if (!nav || !navToggle) return;
+          nav.classList.toggle('is-open', open);
+          navToggle.setAttribute('aria-expanded', String(open));
+          if (mobileQuery.matches) {
+            nav.setAttribute('aria-hidden', open ? 'false' : 'true');
+          } else {
+            nav.removeAttribute('aria-hidden');
+          }
+          if (navOverlay) {
+            navOverlay.hidden = !open;
+            navOverlay.classList.toggle('is-active', open);
+          }
+          document.body.classList.toggle('nav-open', open);
+        };
+
+        const syncNavState = () => {
+          if (!nav) return;
+          if (!mobileQuery.matches) {
+            nav.classList.remove('is-open');
+            nav.removeAttribute('aria-hidden');
+            document.body.classList.remove('nav-open');
+            if (navOverlay) {
+              navOverlay.hidden = true;
+              navOverlay.classList.remove('is-active');
+            }
+            if (navToggle) {
+              navToggle.setAttribute('aria-expanded', 'false');
+            }
+          } else if (!nav.classList.contains('is-open')) {
+            nav.setAttribute('aria-hidden', 'true');
+          }
+        };
+
+        if (navToggle) {
+          navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            setNavState(!expanded);
+          });
+        }
+
+        if (navOverlay) {
+          navOverlay.addEventListener('click', () => setNavState(false));
+        }
+
+        navLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            if (mobileQuery.matches) {
+              setNavState(false);
+            }
+          });
         });
+
+        if (typeof mobileQuery.addEventListener === 'function') {
+          mobileQuery.addEventListener('change', syncNavState);
+        } else if (typeof mobileQuery.addListener === 'function') {
+          mobileQuery.addListener(syncNavState);
+        }
+        syncNavState();
 
         document.querySelectorAll('[data-modal-target]').forEach((btn) => {
           btn.addEventListener('click', () => {
@@ -270,6 +329,9 @@
 
         document.addEventListener('keydown', (event) => {
           if (event.key === 'Escape') {
+            if (mobileQuery.matches) {
+              setNavState(false);
+            }
             document.querySelectorAll('.modal').forEach((modal) => {
               if (!modal.hidden) {
                 modal.hidden = true;
